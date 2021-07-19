@@ -1,5 +1,6 @@
 <template>
   <section>
+    <!-- add search bar here  -->
     <header><h1>Movie search</h1></header>
     <ul>
       <movie-card
