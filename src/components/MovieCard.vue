@@ -5,6 +5,10 @@
     <ul>
       <li><strong>Year:</strong>{{ year }}</li>
       <li><strong>Type:</strong>{{ type }}</li>
+
+      <button>
+        <router-link :to="`/MovieDetails/${imdbId}`">See Details</router-link>
+      </button>
     </ul>
   </li>
 </template>
@@ -16,6 +20,7 @@ export default {
     year: { type: String },
     type: { type: String },
     poster: { type: String },
+    imdbId: { type: String },
     // image: { type:  },
   },
 };
