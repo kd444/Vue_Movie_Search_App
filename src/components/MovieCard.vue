@@ -1,16 +1,14 @@
 <template>
-  <li>
+  <div class="info">
     <img :src="poster" />
-    <h2><strong></strong>{{ title }}</h2>
-    <ul>
-      <li><strong>Year:</strong>{{ year }}</li>
-      <li><strong>Type:</strong>{{ type }}</li>
+    <h3>{{ title }}</h3>
+    <div><strong>Year:</strong>{{ year }}</div>
+    <div><strong>Type:</strong>{{ type }}</div>
 
-      <button>
-        <router-link :to="`/MovieDetails/${imdbId}`">See Details</router-link>
-      </button>
-    </ul>
-  </li>
+    <button class="btn">
+      <router-link :to="`/MovieDetails/${imdbId}`">See Details</router-link>
+    </button>
+  </div>
 </template>
 
 <script>
@@ -25,3 +23,17 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+a {
+  text-decoration: none;
+}
+
+.info {
+  margin-bottom: 3rem;
+}
+
+.info div {
+  margin-bottom: 1rem;
+}
+</style>

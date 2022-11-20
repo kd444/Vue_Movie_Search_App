@@ -8,22 +8,20 @@
         name="moviename"
         v-model="searchStr"
       />
-      <button @click="submitMovie">Search</button>
+      <button class="btn" @click="submitMovie">Search</button>
     </div>
 
     <!-- add search bar here  -->
     <header><h1>Movie search</h1></header>
-    <ul>
-      <movie-card
-        v-for="movie in Movies"
-        :key="movie.imdbID"
-        :imdbId="movie.imdbID"
-        :title="movie.Title"
-        :year="movie.Year"
-        :type="movie.Type"
-        :poster="movie.Poster"
-      ></movie-card>
-    </ul>
+    <movie-card
+      v-for="movie in Movies"
+      :key="movie.imdbID"
+      :imdbId="movie.imdbID"
+      :title="movie.Title"
+      :year="movie.Year"
+      :type="movie.Type"
+      :poster="movie.Poster"
+    ></movie-card>
   </section>
 </template>
 
@@ -60,9 +58,42 @@ export default {
 </script>
 
 <style>
+.btn {
+  text-decoration: none;
+  background-color: teal;
+  color: white;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid teal;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #11acac;
+  border-color: #11acac;
+}
+
+.btn--flat {
+  cursor: pointer;
+  font: inherit;
+  color: teal;
+  border: none;
+  background-color: none;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+}
+
+.btn--flat:hover,
+.btn--flat:active {
+  background-color: teal;
+  color: white;
+}
+
 /* Style the search box inside the navigation bar */
 .topnav input[type="text"] {
-  float: left;
+  /* float: left; */
   padding: 6px;
   /* border: none; */
   margin-top: 8px;
